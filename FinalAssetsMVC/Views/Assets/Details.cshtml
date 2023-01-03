@@ -1,0 +1,83 @@
+﻿@model FinalAssetsMVC1.Models.Asset
+
+@{
+    ViewData["Title"] = "Details";
+    Double localPrice = @Model.Item.Price * Convert.ToDouble(@Model.Office.Rate);
+    String strLocalPrice = localPrice.ToString("#.##");
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Asset</h4>
+    <hr />
+    <ul>
+        
+        @*<li>Office: @Model.Office.Name</li>*@
+        @*<li>Currency: @Model.Office.Currency</li>*@
+        @*<li>Rate: @Model.Office.Rate</li>*@
+        @*<li>Type: @Model.Item.Type</li>*@
+        @*<li>Model: @Model.Item.Model</li>*@
+        @*<li>Price: @Model.Item.Price</li>*@
+        @*<li>Local Currency: @localPrice</li>*@
+        @*<li>Office Id: @Model.OfficeId</li>*@
+        @*<li>PurchaseDate: @Model.PurchaseDate</li>*@
+    </ul>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Office)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Office.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            Local Currency
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Office.Currency @strLocalPrice
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Type)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item.Brand)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item.Model)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item.Price)
+        </dt>
+        <dd class="col-sm-10">
+            $
+            @Html.DisplayFor(model => model.Item.Price)
+        </dd>
+
+ 
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,18 @@
+﻿body {
+}
+
+.redText {
+    background-color: #ff000020
+}
+
+.greenText {
+    background-color: #00800020;
+}
+
+.yellowText {
+    background-color: #ffff0020;
+}
+
+a {
+    text-decoration: none !important;
+}

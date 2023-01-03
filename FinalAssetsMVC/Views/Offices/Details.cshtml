@@ -1,0 +1,87 @@
+﻿@model FinalAssetsMVC1.Models.Office
+
+@{
+    ViewData["Title"] = "Details";
+    //var sortedByPurchase = FinalAssetsMVC1.Models.Asset.OrderBy(i => i.PurchaseDate).ToList();
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Office</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+    </dl>
+</div>
+
+
+
+@*<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index_desc">Purchase Date</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                <a asp-action="Index_sortedByOffice">Office</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in sortedByPurchase)
+        {
+            <tr class="@item.printDetails(item.Item, item.Office)">
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Office.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
