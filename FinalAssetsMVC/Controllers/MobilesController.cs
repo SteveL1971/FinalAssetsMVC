@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalAssetsMVC.Data;
 using FinalAssetsMVC1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalAssetsMVC.Controllers
 {
+    [Authorize]
     public class MobilesController : Controller
     {
         private readonly ApplicationDbContext _context;

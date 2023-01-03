@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FinalAssetsMVC.Data;
 using FinalAssetsMVC1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalAssetsMVC.Controllers
 {
+    [Authorize]
+    //[Authorize(Roles = "Admin")]
     public class AssetsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +23,7 @@ namespace FinalAssetsMVC.Controllers
         }
 
         // GET: Assets sorted by purchase Date
+        
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Asset.Include(a => a.Item).Include(a => a.Office);
